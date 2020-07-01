@@ -1,0 +1,44 @@
+body, html {
+  background-color: $body-bg;
+  margin: 0 auto;
+  cursor: default;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  width: 1236px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  @include for-desktop {
+    width: 1140px;
+  }
+  
+  @include for-desktop-up {
+    width: 960px;
+  }
+  
+  @include for-tablet-landscape-up {
+    width: 720px;
+  }
+  
+  @include for-tablet-portrait-up {
+    width: 540px;
+  }
+  
+  @include for-phone-only {
+    width: 100%;
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 80%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
+}

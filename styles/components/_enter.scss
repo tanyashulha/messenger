@@ -1,0 +1,71 @@
+.main {
+  background-color: $enter;
+  height: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: $font-family-primary;
+
+    .title {
+      color: $color-white;
+      font-size: 24px;
+      letter-spacing: 1px;
+      margin: 0 0 40px 0;
+    }
+
+    .password-label {
+      color: $button;
+      letter-spacing: 1px;
+      font-size: 16px;
+      margin: 0 0 5px 0;
+    }
+
+    .password-field {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $button;
+      padding: 5px 0;
+      outline: none;
+      color: $color-white;
+      font-size: 24px;
+      margin: 0 0 40px 0;
+    }
+
+    .enter-button {
+      width: 100%;
+      background-color: $button;
+      border-radius: 3px;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 1px;
+      padding: 20px 0;
+      font-size: 16px;
+      margin: 0 0 20px 0;
+
+      &:hover {
+        transition: $transition;
+        opacity: 0.9;
+      }
+    }
+
+    .button-back {
+      text-decoration: none;
+      margin: 0 auto;
+      color: $button;
+      font-size: 16px;
+      letter-spacing: 1px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
