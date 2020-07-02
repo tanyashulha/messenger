@@ -4,5 +4,213 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+
+  .chats-blocks {
+    width: 21%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .chat-header {
+      padding: 10px 3px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .search {
+        width: 50%;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        background-color: $header;
+        padding: 7px 15px;
+        color: $color-white;
+        
+        &::placeholder {
+          color: $placeholder-color;
+          font-size: 13px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .menu {
+        cursor: pointer;
+        
+        i::before {
+          color: $icon-color;
+          font-size: 18px;
+        }
+
+        &:hover i::before{
+          color: $color-white;
+          transition: $transition;
+        }
+      }
+
+      .link-back {
+        outline: none;
+        color: $icon-color;
+        font-size: 18px;
+
+        &:hover {
+          color: $color-white;
+          transition: $transition;
+        }
+      }
+    }
+
+   .scroll-box {
+    overflow: auto;
+    visibility: hidden;
+
+    &::-webkit-scrollbar { 
+      width: 5px; 
+      height: 100%;
+      -webkit-appearance: none;
+    }
+    
+    &::-webkit-scrollbar-track {  
+      background-color: $hover-color;
+    }
+
+    &::-webkit-scrollbar-thumb { 
+      background-color: $icon-color; 
+      border-radius: 5px;
+    }
+
+    .scroll-chat-block,
+    &:hover,
+    &:focus {
+      visibility: visible;
+    }
+
+    .scroll-chat-block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      cursor: pointer;
+      height: auto;
+      
+      .chat {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 5px 10px;
+        height: 100%;
+
+        .photo {
+          width: 45px;
+          height: 45px;
+          border-radius: 50px;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: $hover-color;
+          transition: $transition;
+        }
+
+        .no-photo {
+          width: 45px;
+          height: 45px;
+          background-color: $photo-color;
+          border-radius: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+
+          i::before {
+            color: $color-white;
+            font-size: 26px;
+          }
+        }
+
+        .main-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .title, .message {
+            margin: 0;
+            padding: 4px;
+          }
+
+          .title {
+            color: $color-white;
+            font-family: $font-family-primary;
+            font-size: 15px;
+          }
+
+          .message {
+            font-family: $font-family-messages;
+            color: $your-message-color;
+            font-size: 14px;
+            letter-spacing: 1px;
+
+            i::before {
+              color: $color-white;
+            }
+          }
+        }
+
+        .date {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-left: auto;
+
+          .data {
+            color: $icon-color;
+            font-family: $font-family-primary;
+            font-size: 12px;
+            margin: 0;
+            padding: 4px 0;
+          }
+
+          i {
+            transform: rotate(45deg);
+            padding: 4px 0;
+
+            &::before {
+              color: $icon-color;
+              font-size: 16px;
+            }
+          }
+
+          .unread {
+            background-color: $active;
+            border-radius: 50px;
+            height: 20px;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;;
+
+            span {
+              color: $color-white;
+              font-family: $font-family-primary;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+    }
+   }
+  }
+
+  .emoji {
+    width: 24%;
+    height: 100%;
+  }
+
+  .messages {
+    width: 55%;
+    height: 100%;
+    background-color: $chat;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+  }
 }
