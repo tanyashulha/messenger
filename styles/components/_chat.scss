@@ -59,31 +59,6 @@
       }
     }
 
-   .scroll-box {
-    overflow: auto;
-    visibility: hidden;
-
-    &::-webkit-scrollbar { 
-      width: 5px; 
-      height: 100%;
-      -webkit-appearance: none;
-    }
-    
-    &::-webkit-scrollbar-track {  
-      background-color: $hover-color;
-    }
-
-    &::-webkit-scrollbar-thumb { 
-      background-color: $icon-color; 
-      border-radius: 5px;
-    }
-
-    .scroll-chat-block,
-    &:hover,
-    &:focus {
-      visibility: visible;
-    }
-
     .scroll-chat-block {
       display: flex;
       flex-direction: column;
@@ -91,7 +66,7 @@
       cursor: pointer;
       height: auto;
       
-      .chat {
+      .chat-field {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -119,6 +94,12 @@
           align-items: center;
           justify-content: center;
           margin-right: 10px;
+
+          .txt {
+            color: $color-white;
+            font-size: 16px;
+            letter-spacing: 1px;
+          }
 
           i::before {
             color: $color-white;
@@ -197,8 +178,40 @@
         }
       }
 
+      .active {
+        background-color: $active;
+      }
+
     }
-   }
+
+  }
+
+  .scroll-box {
+    overflow: auto;
+    visibility: hidden;
+   
+
+    &::-webkit-scrollbar { 
+      width: 5px; 
+      height: 100%;
+      -webkit-appearance: none;
+    }
+    
+    &::-webkit-scrollbar-track {  
+      background-color: $hover-color;
+    }
+
+    &::-webkit-scrollbar-thumb { 
+      background-color: $icon-color; 
+      border-radius: 5px;
+    }
+
+    .scroll-chat-block,
+    .message-body,
+    &:hover,
+    &:focus {
+      visibility: visible;
+    }
   }
 
   .emoji {
@@ -212,5 +225,172 @@
     background-color: $chat;
     border-left: 1px solid $color-border;
     border-right: 1px solid $color-border;
+    display: flex;
+    flex-direction: column;
+
+    .message-header {
+      border-bottom: 1px solid $color-border;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $enter;
+      flex: 0 0 auto;
+
+      .info {
+        
+        .title {
+          margin: 0;
+          padding: 4px;
+          color: $color-white;
+          font-family: $font-family-primary;
+          font-size: 17px;
+          letter-spacing: 1px;
+        }
+  
+        .members {
+          margin: 0;
+          padding: 4px;
+          color: $icon-color;
+          font-family: $font-family-primary;
+          font-size: 14px;
+        }
+      }
+
+      .menu {
+        display: flex;
+        
+        .icon {
+          padding: 8px;
+          cursor: pointer;
+
+          i::before {
+            color: $icon-color;
+            font-size: 16px;
+          }
+
+          &:hover i::before{
+            color: $color-white;
+            transition: $transition;
+          }
+        }
+
+      }
+    }
+
+    .message-body {
+      padding: 10px 20px;
+      flex: 1 0 auto;
+      overflow: auto;
+      height: auto;
+
+      .mess {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        
+        .photo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          padding-right: 5px;
+        }
+
+        .mess-text {
+          background-color: $message-color;
+          border-radius: 3px;
+          padding: 5px 50px 10px 10px;
+          position: relative;
+          max-width: 70%;
+
+          .name {
+            font-family: $font-family-primary;
+            margin: 0;
+            font-size: 16px;
+          }
+
+          .orange {
+            color: $orange;
+          }
+
+          .purple {
+            color: $purple;
+          }
+
+          .txt {
+            color: $color-white;
+            margin: 0;
+            padding-top: 5px;
+            font-family: $font-family-messages;
+            letter-spacing: 1px;
+            font-size: 14px;
+          }
+
+          .time {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            color: $icon-color;
+            font-family: $font-family-primary;
+            font-size: 12px;
+            margin: 0;
+          }
+        }
+      }
+
+      .my-mess {
+        display: flex;
+        justify-content: flex-end;
+        img {
+          width: 70%;
+        }
+      }
+    }
+
+    .message-input {
+      border-top: 1px solid $color-border;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $enter;
+      flex: 0 0 auto;
+
+      .text-input {
+        border: none;
+        background-color: transparent;
+        width: 80%;
+        height: 50%;
+        outline: none;
+        color: $color-white;
+        resize: none;
+        overflow: hidden;
+
+        &::placeholder {
+          color: $placeholder-color;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .icon {
+        padding: 8px;
+        cursor: pointer;
+
+        i::before {
+          color: $icon-color;
+          font-size: 26px;
+        }
+
+        &:hover i::before{
+          color: $color-white;
+          transition: $transition;
+        }
+
+        .fa-paperclip {
+          transform: rotate(90deg);
+        }
+      }
+    }
   }
 }
