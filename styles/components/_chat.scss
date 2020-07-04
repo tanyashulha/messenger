@@ -3,13 +3,16 @@
   height: 96%;
   display: flex;
   align-items: center;
-  justify-content: center;
 
   .chats-blocks {
-    width: 21%;
+    width: 250px;
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    @include for-tablet-portrait-up {
+      display: none;
+    }
 
     .chat-header {
       padding: 10px 3px;
@@ -180,6 +183,10 @@
 
       .active {
         background-color: $active;
+
+        &:hover {
+          background-color: $active;
+        }
       }
 
     }
@@ -215,18 +222,30 @@
   }
 
   .emoji {
-    width: 24%;
+    width: 250px;
     height: 100%;
+
+    @include for-tablet-landscape-up {
+      display: none;
+    }
   }
 
   .messages {
-    width: 55%;
+    width: calc(100% - 500px);
     height: 100%;
     background-color: $chat;
     border-left: 1px solid $color-border;
     border-right: 1px solid $color-border;
     display: flex;
     flex-direction: column;
+
+    @include for-tablet-landscape-up {
+      width: calc(100% - 250px);
+    }
+
+    @include for-tablet-portrait-up {
+      width: 100%;
+    }
 
     .message-header {
       border-bottom: 1px solid $color-border;
@@ -236,6 +255,30 @@
       align-items: center;
       background-color: $enter;
       flex: 0 0 auto;
+
+      @include for-tablet-portrait-up {
+        justify-content: flex-start;
+      }
+
+      .return {
+        display: none;
+        padding: 5px 15px;
+        cursor: pointer;
+
+        @include for-tablet-portrait-up {
+          display: flex;
+        }
+
+        i::before {
+          color: $icon-color;
+          font-size: 18px;
+        }
+        
+        &:hover i::before {
+          color: $color-white;
+          transition: $transition;
+        }
+      }
 
       .info {
         
@@ -259,6 +302,10 @@
 
       .menu {
         display: flex;
+
+        @include for-tablet-portrait-up {
+          margin-left: auto;
+        }
         
         .icon {
           padding: 8px;
