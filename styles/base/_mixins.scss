@@ -31,8 +31,7 @@ $content-selector: "~ .content > section";
 @mixin tabs(
     $label-selector: $label-selector,
     $slider-selector: $slider-selector,
-    $content-selector: $content-selector,
-    $content-messenger: $content-messenger) {
+    $content-selector: $content-selector) {
       
     @for $i from 1 through 3 {
       &:nth-of-type(#{$i}):checked {

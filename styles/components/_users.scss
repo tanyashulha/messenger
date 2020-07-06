@@ -15,6 +15,7 @@
     justify-content: flex-start;
     padding: 5px 10px;
     cursor: pointer;
+    transition: $transition;
   
     &:hover {
       background-color: $hover-color;
@@ -63,6 +64,11 @@
         color: $color-white;
         font-family: $font-family-primary;
         font-size: 15px;
+
+        i::before {
+          font-size: 10px;
+          margin-right: 5px;
+        }
       }
   
       .message {

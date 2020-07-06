@@ -99,6 +99,49 @@
     overflow: auto;
     height: auto;
 
+    .my-mess {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        width: 70%;
+      }
+    
+      .block-hover {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        background-color: $color-border;
+        opacity: 0;
+        padding: 5px;
+        border-radius: 3px;
+        visibility: hidden;
+        transition: $transition;
+  
+
+        .time {
+          font-family: $font-family-primary;
+          margin: 0 7px 0 0;
+          font-size: 14px;
+          color: $color-white;
+
+        }
+
+        i::before {
+          font-size: 14px;
+          color: $color-white;
+        }
+      }
+
+      &:hover .block-hover {
+        visibility: visible;
+        opacity: 0.5;
+      }
+    }
+
     .mess {
       display: flex;
       align-items: center;
@@ -150,14 +193,6 @@
           font-size: 12px;
           margin: 0;
         }
-      }
-    }
-
-    .my-mess {
-      display: flex;
-      justify-content: flex-end;
-      img {
-        width: 70%;
       }
     }
   }

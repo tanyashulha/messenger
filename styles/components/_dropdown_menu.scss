@@ -1,0 +1,178 @@
+.menu-wrapper {
+  position: relative;
+
+  button.icon {
+    border: none;
+    background: none;
+    outline: none;
+  } 
+
+  &:hover .dropdown-menu{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .dropdown-menu {
+    padding: 10px 0;
+    margin: 0;
+    z-index: 3;
+    left: -150px;
+    border-radius: 3px;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
+    min-width: 170px;
+    position: absolute;
+    background-color: $enter;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+
+    li {
+      padding: 10px;
+      margin: 0;
+      list-style: none;
+      color: $color-white;
+      font-family: $font-family-primary;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background-color: $transition-color;
+      }
+    }
+  }
+}
+
+.users-menu {
+  position: relative;
+  cursor: pointer;
+  
+  i::before {
+    color: $icon-color;
+    font-size: 18px;
+  }
+
+  &:hover i::before{
+    color: $color-white;
+    transition: $transition;
+  }
+
+  button.icon {
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  &:hover .users-dropdown-menu{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .users-dropdown-menu {
+    position: absolute;
+    background-color: $header;
+    width: 250px;
+    left: -15px;
+    top: 40px;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+
+    .user-header {
+      padding: 20px;
+      background-color: $button;
+      position: relative;
+
+      img {
+        border-radius: 50px;
+        width: 45px;
+        height: 45px;
+      }
+
+      .text {
+        padding-top: 15px;
+
+        .name, .phone {
+          color: $color-white;
+          margin: 0;
+          padding: 2px;
+        } 
+
+        .name {
+          font-family: $font-family-primary;
+          font-size: 16px;
+        }
+
+        .phone {
+          font-family: $font-family-messages;
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .user-icon {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        border-radius: 50px;
+        background-color: $active;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i::before {
+          color: $color-white
+        }
+      }
+    }
+
+    .menu {
+      padding: 10px 0;
+      margin: 0;
+      background-color: $header;
+
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 10px 20px;
+        font-family: $font-family-primary;
+        font-size: 16px;
+        color: $color-white;
+        transition: $transition;
+
+        i::before {
+          color: $icon-color;
+          font-size: 16px;
+          padding-right: 20px;
+        }
+
+        &:hover {
+          background-color: $transition-color;
+        }
+      }
+    }
+
+    .user-footer {
+      padding: 20px;
+      color: $icon-color;
+      background-color: $header;
+
+      a {
+        color: $icon-color;
+        font-size: 14px;
+        font-family: $font-family-primary;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .version {
+        margin-top: 10px;
+      }
+    }
+  }
+}

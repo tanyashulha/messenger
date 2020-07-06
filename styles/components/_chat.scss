@@ -37,20 +37,6 @@
         }
       }
 
-      .menu {
-        cursor: pointer;
-        
-        i::before {
-          color: $icon-color;
-          font-size: 18px;
-        }
-
-        &:hover i::before{
-          color: $color-white;
-          transition: $transition;
-        }
-      }
-
       .link-back {
         outline: none;
         color: $icon-color;
