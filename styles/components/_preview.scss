@@ -1,0 +1,33 @@
+.preview-content {
+  @include column;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-app;
+
+  .preview-title {
+    margin: 50px 0;
+    font-size: 30px;
+    color: $header;
+    letter-spacing: 2px;
+  }
+
+  img {
+    width: 70%;
+    height: 70%;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-white;
+    letter-spacing: 1px;
+    background-color: $header;
+    padding: 20px 50px;
+    margin-top: 50px;
+    border-radius: 3px;
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
