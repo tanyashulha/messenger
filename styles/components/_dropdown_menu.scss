@@ -78,10 +78,18 @@
     opacity: 0;
     transition: $transition;
 
+    @include for-tablet-portrait-up {
+      height: 100%;
+    }
+
     .user-header {
       padding: 20px;
       background-color: $button;
       position: relative;
+
+      @include for-tablet-portrait-up {
+        padding: 10px;
+      }
 
       img {
         border-radius: 50px;
@@ -92,6 +100,10 @@
       .text {
         padding-top: 15px;
 
+        @include for-tablet-portrait-up {
+          padding-top: 5px;
+        }
+
         .name, .phone {
           color: $color-white;
           margin: 0;
@@ -101,12 +113,20 @@
         .name {
           font-family: $font-family-primary;
           font-size: 16px;
+
+          @include for-tablet-portrait-up {
+            font-size: 12px;
+          }
         }
 
         .phone {
           font-family: $font-family-messages;
           font-size: 12px;
           letter-spacing: 1px;
+
+          @include for-tablet-portrait-up {
+            font-size: 10px;
+          }
         }
       }
 
@@ -122,6 +142,11 @@
         align-items: center;
         justify-content: center;
 
+        @include for-tablet-portrait-up {
+          right: 10px;
+          bottom: 10px;
+        }
+
         i::before {
           color: $color-white
         }
@@ -132,6 +157,8 @@
       padding: 10px 0;
       margin: 0;
       background-color: $header;
+      display: flex;
+      flex-direction: column;
 
       li {
         list-style: none;
@@ -142,10 +169,20 @@
         color: $color-white;
         transition: $transition;
 
+        @include for-tablet-portrait-up {
+          padding: 10px;
+          font-size: 12px;
+        }
+
         i::before {
           color: $icon-color;
           font-size: 16px;
           padding-right: 20px;
+
+          @include for-tablet-portrait-up {
+            font-size: 12px;
+            padding-right: 5px;
+          }
         }
 
         &:hover {
@@ -159,11 +196,19 @@
       color: $icon-color;
       background-color: $header;
 
+      @include for-tablet-portrait-up {
+        padding: 10px;
+      }
+
       a {
         color: $icon-color;
         font-size: 14px;
         font-family: $font-family-primary;
         text-decoration: none;
+
+        @include for-tablet-portrait-up {
+          font-size: 12px;
+        }
 
         &:hover {
           text-decoration: underline;
@@ -172,6 +217,10 @@
 
       .version {
         margin-top: 10px;
+
+        @include for-tablet-portrait-up {
+          margin-top: 5px;
+        }
       }
     }
   }

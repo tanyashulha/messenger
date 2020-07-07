@@ -135,5 +135,49 @@
   }
 }
 
- 
+.return-to-users {
+  position: relative;
+  display: none;
+  padding: 5px 15px;
+  cursor: pointer;
+
+  button.icon {
+    background: none;
+    outline: none;
+    border: none;
+
+    i::before {
+      color: $icon-color;
+      font-size: 18px;
+    }
+    
+    &:hover i::before {
+      color: $color-white;
+      transition: $transition;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    display: flex;
+  }
+
+  &:hover .users{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  > .users {
+    padding: 10px 0;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
+    position: absolute;
+    background-color: $enter;
+    top: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+    height: 400px;
+  }
+}
 

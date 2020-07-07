@@ -28,26 +28,6 @@
       justify-content: flex-start;
     }
 
-    .return {
-      display: none;
-      padding: 5px 15px;
-      cursor: pointer;
-
-      @include for-tablet-portrait-up {
-        display: flex;
-      }
-
-      i::before {
-        color: $icon-color;
-        font-size: 18px;
-      }
-      
-      &:hover i::before {
-        color: $color-white;
-        transition: $transition;
-      }
-    }
-
     .info {
       
       .title {
