@@ -15,8 +15,7 @@
     }
 
     &:hover i::before {
-      transition: $transition;
-      color: $color-white;
+      @include icon-hover;
     }
   }
 

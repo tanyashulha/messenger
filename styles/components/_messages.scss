@@ -4,8 +4,7 @@
   background-color: $chat;
   border-left: 1px solid $color-border;
   border-right: 1px solid $color-border;
-  display: flex;
-  flex-direction: column;
+  @include column;
 
   @include for-tablet-landscape-up {
     width: calc(100% - 250px);
@@ -65,8 +64,7 @@
         }
 
         &:hover i::before{
-          color: $color-white;
-          transition: $transition;
+          @include icon-hover;
         }
       }
 
@@ -213,8 +211,7 @@
       }
 
       &:hover i::before{
-        color: $color-white;
-        transition: $transition;
+        @include icon-hover;
       }
 
       .fa-paperclip {

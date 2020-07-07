@@ -2,14 +2,11 @@
   position: relative;
 
   button.icon {
-    border: none;
-    background: none;
-    outline: none;
+    @include  button-with-icon;
   } 
 
   &:hover .dropdown-menu{
-    visibility: visible;
-    opacity: 1;
+    @include dropdown-menu-hover;
   }
 
   .dropdown-menu {
@@ -30,10 +27,9 @@
       padding: 10px;
       margin: 0;
       list-style: none;
-      color: $color-white;
       font-family: $font-family-primary;
       cursor: pointer;
-      transition: $transition;
+      @include icon-hover;
 
       &:hover {
         background-color: $transition-color;
@@ -52,25 +48,21 @@
   }
 
   &:hover i::before{
-    color: $color-white;
-    transition: $transition;
+    @include icon-hover;
   }
 
   button.icon {
-    background: none;
-    border: none;
-    outline: none;
+    @include button-with-icon;
   }
 
   &:hover .users-dropdown-menu{
-    visibility: visible;
-    opacity: 1;
+    @include dropdown-menu-hover;
   }
 
   .users-dropdown-menu {
     position: absolute;
     background-color: $header;
-    width: 250px;
+    width: $standart-width;
     left: -15px;
     top: 40px;
     z-index: 3;
@@ -157,8 +149,7 @@
       padding: 10px 0;
       margin: 0;
       background-color: $header;
-      display: flex;
-      flex-direction: column;
+      @include column;
 
       li {
         list-style: none;
@@ -166,8 +157,7 @@
         padding: 10px 20px;
         font-family: $font-family-primary;
         font-size: 16px;
-        color: $color-white;
-        transition: $transition;
+        @include icon-hover;
 
         @include for-tablet-portrait-up {
           padding: 10px;

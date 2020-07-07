@@ -1,14 +1,12 @@
 .main {
   background-color: $enter;
   height: 96%;
-  display: flex;
+  @include column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 
   .field {
-    display: flex;
-    flex-direction: column;
+    @include column;
     align-items: flex-start;
     font-family: $font-family-primary;
 

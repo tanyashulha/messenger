@@ -11,7 +11,7 @@
   }
 
   .emoji {
-    width: 250px;
+    width: $standart-width;
     height: 100%;
 
     @include for-tablet-landscape-up {
@@ -21,14 +21,13 @@
 }
 
 .users {
-  width: 250px;
+  width: $standart-width;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  @include column;
 
   .users-header {
     padding: 10px 3px;
-    width: 250px;
+    width: $standart-width;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -55,8 +54,7 @@
       font-size: 18px;
 
       &:hover {
-        color: $color-white;
-        transition: $transition;
+        @include icon-hover;
       }
     }
   }

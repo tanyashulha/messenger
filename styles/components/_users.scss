@@ -3,9 +3,8 @@
   padding: 0;
   margin: 0;
   height: 100%;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
+  width: $standart-width;
+  @include column;
 
   .user-field {
     list-style-type: none;
@@ -51,8 +50,7 @@
     }
   
     .main-info {
-      display: flex;
-      flex-direction: column;
+      @include column;
       justify-content: space-between;
   
       .title, .message {
@@ -84,8 +82,7 @@
     }
   
     .date {
-      display: flex;
-      flex-direction: column;
+      @include column;
       justify-content: space-between;
       align-items: flex-end;
       margin-left: auto;
@@ -115,7 +112,7 @@
         width: 20px;
         display: flex;
         align-items: center;
-        justify-content: center;;
+        justify-content: center;
   
         span {
           color: $color-white;
@@ -142,18 +139,15 @@
   cursor: pointer;
 
   button.icon {
-    background: none;
-    outline: none;
-    border: none;
+    @include button-with-icon;
 
     i::before {
       color: $icon-color;
       font-size: 18px;
     }
-    
+      
     &:hover i::before {
-      color: $color-white;
-      transition: $transition;
+      @include icon-hover;
     }
   }
 
@@ -162,8 +156,7 @@
   }
 
   &:hover .users{
-    visibility: visible;
-    opacity: 1;
+    @include dropdown-menu-hover;
   }
 
   > .users {

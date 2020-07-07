@@ -53,3 +53,25 @@ $content-selector: "~ .content > section";
     }
 }
 
+//others
+
+@mixin button-with-icon {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+@mixin icon-hover {
+  color: $color-white;
+  transition: $transition;
+}
+
+@mixin dropdown-menu-hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}

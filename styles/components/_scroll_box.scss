@@ -2,26 +2,25 @@
   overflow: auto;
   visibility: hidden;
    
+  &::-webkit-scrollbar { 
+    width: 5px; 
+    height: 100%;
+    -webkit-appearance: none;
+  }
+  
+  &::-webkit-scrollbar-track {  
+    background-color: $hover-color;
+  }
 
-    &::-webkit-scrollbar { 
-      width: 5px; 
-      height: 100%;
-      -webkit-appearance: none;
-    }
-    
-    &::-webkit-scrollbar-track {  
-      background-color: $hover-color;
-    }
+  &::-webkit-scrollbar-thumb { 
+    background-color: $icon-color; 
+    border-radius: 5px;
+  }
 
-    &::-webkit-scrollbar-thumb { 
-      background-color: $icon-color; 
-      border-radius: 5px;
-    }
-
-    .users-list,
-    .message-body,
-    &:hover,
-    &:focus {
-      visibility: visible;
-    }
+  .users-list,
+  .message-body,
+  &:hover,
+  &:focus {
+    visibility: visible;
+  }
 }
